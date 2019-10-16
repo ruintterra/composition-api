@@ -46,6 +46,7 @@ export interface SetupContext {
   readonly parent: ComponentInstance | null;
   readonly root: ComponentInstance;
   readonly listeners: { [key: string]: Function };
+  readonly style: { [key: string]: string };
 
   emit(event: string, ...args: any[]): void;
 }
@@ -85,8 +86,8 @@ export function createComponent<
   options: (
     // prefer the provided Props, otherwise infer it from PropsOptions
     HasDefined<Props> extends true
-      ? ComponentOptionsWithProps<PropsOptions, RawBindings, Props>
-      : ComponentOptionsWithProps<PropsOptions, RawBindings>) &
+    ? ComponentOptionsWithProps<PropsOptions, RawBindings, Props>
+    : ComponentOptionsWithProps<PropsOptions, RawBindings>) &
     Omit<Vue2ComponentOptions<Vue>, keyof ComponentOptionsWithProps<never, never>>
 ): VueProxy<PropsOptions, RawBindings>;
 // implementation, close to no-op
