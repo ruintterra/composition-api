@@ -1,6 +1,6 @@
 {
   "name": "@morlz/composition-api",
-  "version": "0.3.2-rc3",
+  "version": "0.3.2-rc4",
   "description": "Provide logic composition capabilities for Vue.",
   "keywords": [
     "vue",
