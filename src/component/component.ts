@@ -40,13 +40,13 @@ type VueProxy<PropsOptions, RawBindings> = Vue2ComponentOptions<
 > &
   VueConstructorProxy<PropsOptions, RawBindings>;
 
-export interface SetupContext {
+export interface SetupContext<Style = any> {
   readonly attrs: Record<string, string>;
   readonly slots: { [key: string]: (...args: any[]) => VNode[] };
   readonly parent: ComponentInstance | null;
   readonly root: ComponentInstance;
   readonly listeners: { [key: string]: Function };
-  readonly style: { [key: string]: string };
+  readonly style: Style;
 
   emit(event: string, ...args: any[]): void;
 }
