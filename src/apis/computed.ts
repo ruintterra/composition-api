@@ -44,3 +44,5 @@ export function computed<T>(options: Option<T>['get'] | Option<T>): Ref<T> {
     },
   });
 }
+
+export type ComputedRef<T> = Readonly<Ref<T>>;
